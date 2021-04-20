@@ -1,0 +1,3 @@
+target-file="XXX.xlsx"
+backup-directory="./backup"
+specified-time="{YYYY}/{M}/{D} {hh}:{mm}:{dd} {JW}{W}{WW}"

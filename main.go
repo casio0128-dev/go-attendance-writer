@@ -3,9 +3,17 @@ package main
 import (
 	"fmt"
 	"github.com/360EntSecGroup-Skylar/excelize"
+	"github.com/BurntSushi/toml"
 )
 
 func main() {
+	var config Config
+
+	if _, err := toml.DecodeFile("config.toml", &config); err != nil {
+		panic(err)
+	}
+	fmt.Println(config)
+
 	f := excelize.NewFile()
     // Create a new sheet.
     index := f.NewSheet("Sheet2")
@@ -18,4 +26,7 @@ func main() {
     if err := f.SaveAs("Book1.xlsx"); err != nil {
         fmt.Println(err)
     }
+	
+
+	fmt.Println(parse(config.SpecifiedTime))
 }
