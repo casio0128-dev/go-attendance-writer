@@ -1,3 +1,22 @@
-target-file="XXX.xlsx"
-backup-directory="./backup"
-specified-time="{YYYY}/{M}/{D} {hh}:{mm}:{dd} {JW}{W}{WW}"
+
+[Attendance]
+# 予定時間（空白文字列を与えた場合、処理が行われません。）
+# 予定出勤時間
+plan-commuting="{hh}:{mm}:{dd}"
+# 予定退勤時間
+plan-leave="{hh}:{mm}:{dd}"
+
+# 実績時間（空白文字列を与えた場合、現在日時が指定されます。）
+# 実績出勤時間
+specified-commuting="{YYYY}/{M}/{D} {hh}:{mm}:{dd} {JW}{W}{WW}"
+# 実績退勤時間
+specified-leave="{YYYY}/{M}/{D} {hh}:{mm}:{dd} {JW}{W}{WW}"
+
+[Excel]
+target="XXX.xlsx"
+
+[Backup]
+# バックアップ保存先
+directory="./backup"
+# バックアップ保存数（これを超えた場合古いものが削除されます）
+limit=5
